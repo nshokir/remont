@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>hangge.comm</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+    <style>
+
+        #container{
+
+            width:270px;
+
+            margin:20px auto;
+
+            padding:15px;
+
+            background-color:#eee;
+
+          border-radius: 15px;
+
+        }
+
+ 
+
+        button, input, textarea{
+
+            padding:5px;
+
+            font-size: 16px;
+
+        }
+
+    </style>
+
+    <script>
+
+        // Количество начальных параметров
+
+        var varCount = 2;
+
+ 
+
+        $(function () {
+
+          // Новое нажатие кнопки
+
+            $('#addVar').on('click', function(){
+
+                varCount++;
+
+                $node = '<p><label for="var'+varCount+'"> Проект'+varCount+': </label>'
+
+                  + '<input type="text" name="var'+varCount+'" id="var'+varCount+'"></p>';
+
+                  // Добавляем новые элементы формы в td
+
+                $("#myTd").append($node);
+
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+  <div id="container">
+
+      <table id="myTable">
+
+        <form id="myForm" method="post">
+
+          <tr>
+
+            <td id="myTd">
+
+              <p><label for="var1"> Элемент 1: </label> <input type ="text" name="var1" id="var1"></p>
+
+              <p><label for="var2"> Пункт 2: </label> <input type ="text" name="var2" id="var2"></p>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+
+              <input id="addVar" type="button" value="Добавить одну"/>
+
+              <input type="submit" value="Отправить" style="float:right"/>
+
+            </td>
+
+          </tr>
+
+        </form>
+
+      </table>
+
+  </div>
+
+</body>
+
+</html>
